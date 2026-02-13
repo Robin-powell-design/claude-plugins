@@ -1,173 +1,230 @@
 ---
 name: social-media
-description: Create social media visuals as single-file HTML - posts, stories, carousels, banners, and cards for Instagram, LinkedIn, X/Twitter, and other platforms. Use this skill whenever the user asks for a social media post, social graphic, story, carousel, banner, cover image, Open Graph image, promotional visual, quote card, announcement graphic, or any visual content meant for social platforms.
+description: Create social media visuals as single-file HTML — posts, stories, carousels, banners, and cards for Instagram, LinkedIn, X/Twitter, and other platforms. Use this skill whenever the user asks for a social media post, social graphic, story, carousel, banner, cover image, Open Graph image, promotional visual, quote card, announcement graphic, or any visual content meant for social platforms. Also trigger for "make me a post about...", "create a visual for...", "design a graphic for...", or "social content for...". NOT for landing pages or app interfaces.
 ---
 
-This skill creates social media visuals as self-contained HTML files. These can be screenshotted or converted to images for posting on any platform.
+# Social Media Visual Designer
 
-## When to Use
+Create scroll-stopping social media visuals as self-contained HTML files that can be screenshotted or exported.
 
-Trigger this skill when users ask for:
-- Social media posts or graphics
-- Instagram posts, stories, reels covers
-- LinkedIn posts, banners, cover images
-- X/Twitter posts, header images
-- Facebook posts, event covers
-- Quote cards, announcement graphics
-- Promotional visuals
-- Open Graph (OG) images
-- Carousel slides
-- "Make me a post about..."
-- "Create a visual for..."
-- "Design a graphic for..."
+## Why HTML?
 
-**NOT for**: Landing pages, app interfaces, dashboards (use other skills).
+Social media visuals built in HTML/CSS give you full creative control — custom typography, animated elements, precise layouts, gradient effects, and SVG illustrations — all without needing Figma, Canva, or Photoshop. The output is a pixel-perfect HTML file sized to the exact platform dimensions. The user screenshots or exports it to get their final image.
+
+---
+
+## Before Designing
+
+### Ask (or infer) these:
+
+- **Platform & format** — Instagram post? LinkedIn banner? X card? Story? Carousel? Each has specific dimensions.
+- **What's the message?** — What's the one thing someone should take away in 1.5 seconds of scrolling?
+- **Brand context** — Colors, fonts, tone? If unknown, ask or suggest a direction.
+- **Content type** — Announcement? Quote? Data/stat? Tutorial? Promotional? Behind-the-scenes?
+
+If the user gives you a topic and no other context, make a creative decision and go. Don't over-ask — ship something bold and iterate.
+
+---
 
 ## Platform Dimensions
 
+Always set the HTML `<body>` and container to the exact pixel dimensions for the target platform. The page background should fill the entire canvas with no scrolling.
+
 ### Instagram
-- **Post (Square)**: 1080 x 1080px
-- **Post (Portrait)**: 1080 x 1350px
-- **Story**: 1080 x 1920px
-- **Carousel**: 1080 x 1080px per slide
+- **Post (square):** 1080 × 1080px
+- **Post (portrait):** 1080 × 1350px (recommended — takes up more feed space)
+- **Story / Reel cover:** 1080 × 1920px
+- **Carousel slide:** 1080 × 1080px or 1080 × 1350px (each slide is a separate HTML file)
 
 ### LinkedIn
-- **Post**: 1200 x 1200px (square) or 1200 x 628px (landscape)
-- **Banner**: 1584 x 396px
-- **Profile Cover**: 1128 x 191px
+- **Post image:** 1200 × 627px
+- **Article cover:** 1200 × 644px
+- **Banner / cover:** 1584 × 396px
+- **Carousel slide:** 1080 × 1080px or 1080 × 1350px (PDF export, but design as individual slides)
 
-### X/Twitter
-- **Post**: 1200 x 675px or 1200 x 1200px
-- **Header**: 1500 x 500px
+### X / Twitter
+- **Post image:** 1200 × 675px (16:9) or 1200 × 1200px (1:1)
+- **Header banner:** 1500 × 500px
+- **Card image:** 1200 × 628px
 
-### Facebook
-- **Post**: 1200 x 630px
-- **Event Cover**: 1920 x 1005px
+### General
+- If the user doesn't specify a platform, default to **1080 × 1080px** (works everywhere)
+- For carousels, create numbered files: `slide-1.html`, `slide-2.html`, etc.
 
-### Open Graph
-- **OG Image**: 1200 x 630px
+---
 
-## Design Principles
+## Design Principles for Social
 
-### Visual Impact
-- **Bold, readable text**: Large enough to read on mobile feeds.
-- **High contrast**: Stand out in crowded timelines.
-- **Single focal point**: One clear message per visual.
-- **Brand consistency**: Colors, fonts, and style that match the brand.
+### 1. The Thumb-Stop Test
 
-### Typography for Social
-- **Headlines**: 48-120px depending on format.
-- **Body text**: 24-36px minimum for readability.
-- **Font weights**: Bold headlines, medium body.
-- **Max 3 text elements**: Headline, subhead, CTA/hashtag.
+Someone is scrolling at speed. Your visual has ~1.5 seconds to make them pause. This means:
 
-### Color Strategy
-- **Brand colors**: Primary + accent for consistency.
-- **Gradient backgrounds**: Modern, eye-catching.
-- **Solid overlays**: On photos for text readability.
-- **Dark mode friendly**: Consider how it looks on dark feeds.
+- **One dominant visual element** — not five things competing
+- **High contrast** — dark on light or light on dark, bold enough to read on a phone at arm's length
+- **Large text** — if there's text, it should be readable at 40% zoom. Social is consumed small
+- **Visual tension** — something unexpected, asymmetric, or bold enough to break the scroll pattern
 
-### Layout Patterns
-- **Centered focus**: Text in the center or lower third.
-- **Asymmetric balance**: Visual interest through offset elements.
-- **Safe zones**: Keep key content away from edges (especially stories).
-- **Visual hierarchy**: What should they see first, second, third?
+### 2. Less Text, More Impact
 
-## Technical Implementation
+Social visuals are not documents. Rules of thumb:
 
-### HTML Structure
+- **Maximum 15 words** visible on any single post/slide
+- Headlines: 3-7 words maximum
+- If you need more text, it goes in the caption, not the image
+- Exception: carousel slides can carry more text per slide since the format invites reading
+
+### 3. Typography IS the Design
+
+On social, type often IS the visual. Make it count:
+
+- Use dramatic size contrast — massive headline, tiny attribution
+- Tight letter-spacing on display text (-0.03 to -0.06em)
+- Consider text as shape — how the words form a block, how negative space flows around them
+- Monospace, handwritten, or display fonts can add personality
+- Weight variation creates hierarchy without color
+
+### 4. Color That Pops
+
+Social feeds are noisy. Your visual competes with everything else on screen:
+
+- Bold, saturated colors tend to outperform muted palettes
+- Dark backgrounds make content feel premium and high-contrast
+- Gradients add dimension — but use 2-3 colors max, not rainbows
+- One accent color for emphasis. Don't spray color everywhere
+- Test mentally: would this stand out in a feed of selfies and food photos?
+
+### 5. Visual Hierarchy in a Small Space
+
+Even at 1080px, you have limited real estate:
+
+- One clear focal point
+- Supporting elements stay small and secondary
+- Whitespace is your friend — don't fill every pixel
+- Alignment matters more at small sizes — misalignment is jarring
+
+---
+
+## Content Type Patterns
+
+### Quote / Statement
+- Large text centered or off-center
+- Minimal decoration — let the words breathe
+- Attribution in small text, different weight
+- Background: solid color, subtle gradient, or textured
+
+### Data / Statistic
+- One big number as the hero
+- Context in smaller text below
+- Optional: simple chart or visual representation (SVG bar, ring, etc.)
+- The number should be readable from across a room
+
+### Announcement / Launch
+- Product name or feature name bold and large
+- Short descriptor underneath
+- Optional: mini product UI mockup in CSS/SVG
+- Badge or tag ("New", "Now Live", version number)
+- CTA-like element even though it's an image ("Try it →", "Link in bio")
+
+### Carousel / Multi-slide
+- Slide 1: Hook — bold statement or question that makes them swipe
+- Middle slides: Content — one idea per slide, clear progression
+- Final slide: CTA — what to do next, follow, link in bio, etc.
+- Visual consistency across slides — same background, type system, color palette
+- Slight variation to reward swiping — background color shifts, element positions change
+
+### Tutorial / How-to
+- Step numbers prominent
+- One step per slide in carousels
+- Code blocks styled if technical content
+- Before/after if showing a transformation
+
+### Behind-the-scenes / Personal brand
+- More casual, less polished — intentionally
+- Handwritten-style fonts or organic shapes
+- Warm colors, less corporate
+- Feels human, not branded
+
+---
+
+## Technical Standards
+
+### Single-File HTML
+
+Every visual is one self-contained `.html` file:
+
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
+    html, body {
       width: 1080px;
-      height: 1080px;
-      font-family: 'Inter', system-ui, sans-serif;
+      height: 1080px; /* or target dimensions */
+      overflow: hidden;
     }
-    .container { /* your design */ }
+    /* ... all styles ... */
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <!-- Content -->
-  </div>
+  <!-- ... content ... -->
 </body>
 </html>
 ```
 
-### Background Techniques
-```css
-/* Gradient */
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+### No External Dependencies
 
-/* Mesh gradient */
-background:
-  radial-gradient(at 30% 20%, #ff6b6b 0%, transparent 50%),
-  radial-gradient(at 70% 80%, #4ecdc4 0%, transparent 50%),
-  linear-gradient(135deg, #1a1a2e, #16213e);
+- Google Fonts are OK (via `<link>` tag)
+- No external images — use CSS gradients, SVG, Unicode, or emoji
+- No JavaScript required (static visuals) — but light JS is fine for animated visuals the user might want to screen-record
 
-/* Noise texture overlay */
-.noise::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,...") repeat;
-  opacity: 0.1;
-  pointer-events: none;
-}
-```
+### Font Loading
 
-### Text Effects
-```css
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(90deg, #fff, #a5b4fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+Social visuals depend heavily on typography. Always include a Google Fonts link for the typeface you choose. Good social fonts:
 
-/* Text shadow for depth */
-.shadow-text {
-  text-shadow: 0 4px 30px rgba(0,0,0,0.3);
-}
-```
+- **Inter** — clean, professional, works everywhere
+- **Space Grotesk** — geometric, modern, techy
+- **Sora** — rounded, friendly, approachable
+- **DM Sans** — clean, slightly warm
+- **JetBrains Mono** — technical, developer audience
+- **Playfair Display** — editorial, sophisticated
+- **Bricolage Grotesque** — distinctive, characterful
 
-## Content Types
+### SVG for Illustrations
 
-### Quote Cards
-- Large quote text (60-80px)
-- Attribution smaller below
-- Decorative quote marks
-- Solid or gradient background
+Build simple illustrations, icons, and decorative elements in inline SVG:
+- Logo marks and icons
+- Abstract shapes and patterns
+- Simple charts and data visualizations
+- Decorative lines and dividers
 
-### Announcement Posts
-- Clear headline
-- Key details in bullet/icon format
-- CTA or date prominently displayed
-- Brand colors and logo placement
+### CSS for Everything Else
 
-### Carousel Slides
-- Consistent template across slides
-- Clear slide numbering or progress
-- Hook on first slide
-- CTA on last slide
+- Gradients for backgrounds and text effects (`background-clip: text`)
+- `border-radius` for organic shapes
+- `box-shadow` and `filter: blur()` for depth and glow
+- `transform` for rotation, scale, and visual interest
+- Grid and flexbox for precise layout
 
-### Story Graphics
-- Full-bleed design
-- Large, centered text
-- Swipe-up or link CTA zone at bottom
-- Animated elements if desired
+---
 
-## Output
+## Delivery
 
-Deliver a complete HTML file that:
-1. Has exact dimensions for the target platform
-2. Is self-contained (inline CSS, no external images)
-3. Uses web fonts from Google Fonts
-4. Is ready to screenshot or convert to PNG/JPG
-5. Looks professional and on-brand
+### Single posts
+Output one `.html` file named descriptively (e.g., `launch-announcement-ig.html`).
+
+### Carousels
+Output numbered files: `carousel-slide-1.html`, `carousel-slide-2.html`, etc. All slides share the same design system — consistent colors, fonts, spacing.
+
+### Multiple platforms
+If the user wants the same content for multiple platforms, create separate files sized for each (e.g., `post-instagram.html` at 1080×1350 and `post-linkedin.html` at 1200×627). Adapt the layout to fit each aspect ratio — don't just scale.
+
+After building, verify:
+- [ ] Dimensions match the target platform exactly
+- [ ] Text is readable at 50% zoom (simulates phone viewing)
+- [ ] No external images — all visuals are CSS/SVG
+- [ ] One clear focal point exists
+- [ ] Maximum 15 words visible (unless carousel)
+- [ ] The visual would stop your thumb in a feed

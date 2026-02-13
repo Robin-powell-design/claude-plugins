@@ -1,0 +1,62 @@
+{
+  "skill_name": "premium-ui-designer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a landing page for a developer API platform called Arcline. It provides unified API access to multiple LLM providers. Make it premium and dark.",
+      "expected_output": "A single HTML file with dark theme, CSS/SVG product mockups, scroll animations, proper accessibility, and zero external images",
+      "files": [],
+      "expectations": [
+        "Output is a single .html file",
+        "Uses the dark surface stack (--bg, --surface, --surface-2, --surface-3 CSS variables)",
+        "Contains at least one CSS/SVG product UI mockup (dashboard, code view, or API response visualization)",
+        "Has IntersectionObserver-based scroll reveal animations",
+        "Includes prefers-reduced-motion media query",
+        "Has a skip-to-main link",
+        "Uses semantic HTML landmarks (nav, main, footer)",
+        "Contains no external image URLs (no img src to external URLs, no background-image url to external URLs)",
+        "Has ARIA labels on interactive elements",
+        "Uses Inter or a system font stack",
+        "Contains a clear CTA in the hero section",
+        "Has focus-visible styles defined",
+        "Contains realistic copy (not lorem ipsum)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Build me a product page for a project management tool called Taskflow. It should have a kanban board mockup, animated workflow connectors, and a bento grid section. Apple style with Linear aesthetics.",
+      "expected_output": "A single HTML file with Apple-style layout, kanban board CSS mockup, SVG workflow connectors with dash animation, and bento grid with mini-UIs",
+      "files": [],
+      "expectations": [
+        "Output is a single .html file",
+        "Contains a CSS kanban board mockup with multiple columns",
+        "Has SVG animated connectors using stroke-dasharray",
+        "Includes a bento grid section with at least 3 cards",
+        "Bento cards contain mini-UI components (not just text/icons)",
+        "Uses CSS custom properties for the color system",
+        "Sections have generous vertical padding (80px+)",
+        "Contains no external image URLs",
+        "Has prefers-reduced-motion support",
+        "Page has a narrative flow (hero → features → proof → CTA)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Create a landing page for an AI code review tool called ReviewBot. Include a sliding gallery of feature cards, ring stats showing performance metrics, and an animated gradient mesh hero. Make it look like it belongs on Linear's website.",
+      "expected_output": "A single HTML file with gradient mesh hero, draggable gallery, SVG ring stats, Linear-style aesthetic, and full accessibility",
+      "files": [],
+      "expectations": [
+        "Output is a single .html file",
+        "Hero has an animated gradient mesh background (blurred orbs or similar)",
+        "Contains a horizontal gallery/carousel with multiple cards",
+        "Gallery supports mouse drag or scroll interaction",
+        "Has SVG circular progress indicators (ring stats)",
+        "Ring stats animate on scroll (IntersectionObserver triggered)",
+        "Uses the violet/pink/orange gradient accent palette",
+        "Has a logos marquee or social proof section",
+        "Contains no external image URLs",
+        "Accessibility: skip link, landmarks, ARIA labels, reduced-motion, focus-visible all present"
+      ]
+    }
+  ]
+}
