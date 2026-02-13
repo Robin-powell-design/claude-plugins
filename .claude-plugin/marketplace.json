@@ -1,0 +1,44 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "robin-powell-design",
+  "description": "Premium UI design plugins for Claude Code including premium UI designer, social media graphics, and Refactoring UI principles",
+  "owner": {
+    "name": "Robin Powell",
+    "email": "robin@example.com"
+  },
+  "plugins": [
+    {
+      "name": "premium-ui-designer",
+      "description": "Design and build premium UI with the craft level of Linear, Apple, Stripe, and Vercel. Produces single-file HTML with zero external images.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Robin Powell",
+        "email": "robin@example.com"
+      },
+      "source": "./plugins/premium-ui-designer",
+      "category": "design"
+    },
+    {
+      "name": "social-media",
+      "description": "Create social media visuals as single-file HTML - posts, stories, carousels, banners, and cards for Instagram, LinkedIn, X/Twitter, and other platforms.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Robin Powell",
+        "email": "robin@example.com"
+      },
+      "source": "./plugins/social-media",
+      "category": "design"
+    },
+    {
+      "name": "refactoring-ui",
+      "description": "Expert UI design guidance combining principles from Refactoring UI, Practical UI, Picture This, and Grid Systems in Graphic Design.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Robin Powell",
+        "email": "robin@example.com"
+      },
+      "source": "./plugins/refactoring-ui",
+      "category": "design"
+    }
+  ]
+}
